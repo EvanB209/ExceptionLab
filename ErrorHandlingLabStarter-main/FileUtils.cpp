@@ -1,0 +1,38 @@
+//
+// Created by Christopher Vaughn on 10/29/25.
+//
+/**
+ * @file FileUtils.cpp
+ * @brief Implements utility functions for handling file operations.
+ *
+ * @author [Your Name Here]
+ * @date [Current Date]
+ * @version 1.0
+ */
+
+#include "FileUtils.h"
+#include "Exceptions.h"     // Include for student's custom exceptions
+#include <string>           // For string
+#include <fstream>          // For ifstream
+
+using namespace std;
+
+/**
+ * @brief Attempts to open a file, handling failures and retries.
+ * * This function contains the logic that the student must
+ * convert to use try...catch with FileOpenException.
+ *
+ * @param file The ifstream object to be opened (passed by reference).
+ * @param filename The first filename to try.
+ */
+void openFileForReading(std::ifstream& file, const std::string& filename) {
+
+
+
+    file.open(filename);
+    if (!file.is_open()) {
+        throw FileOpenException("Could not open file: " + filename);
+
+    }
+}
+
